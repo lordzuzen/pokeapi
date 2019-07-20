@@ -17,12 +17,27 @@ public class PokemonPersistanceServiceImpl implements PokemonPersistanceService 
 	
 	@Override
 	public void create(Pokemon pokemon) {
-		pokemonPersistanceDAO.create(pokemon);
+		pokemonPersistanceDAO.save(pokemon);
 	}
 
 	@Override
 	public List<Pokemon> getHighestPokemons() {
-		return pokemonPersistanceDAO.getHighestPokemons();
+		return pokemonPersistanceDAO.findTop5ByOrderByHeightDesc();
+	}
+
+	@Override
+	public List<Pokemon> getHeaviestPokemons() {
+		return pokemonPersistanceDAO.findTop5ByOrderByWeightDesc();
+	}
+
+	@Override
+	public List<Pokemon> getMoreBaseExperiencePokemons() {
+		return pokemonPersistanceDAO.findTop5ByOrderByBaseExperienceDesc();
+	}
+	
+	@Override
+	public List<Pokemon> findAll() {
+		return pokemonPersistanceDAO.findAll();
 	}
 
 }
