@@ -1,4 +1,4 @@
-package com.alea.springboot.app.pokeapi.model.pokemon.service;
+package com.alea.springboot.app.pokeapi.service.pokemon;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.alea.springboot.app.pokeapi.model.pokedex.service;
+package com.alea.springboot.app.pokeapi.service.pokedex;
 
 import com.alea.springboot.app.pokeapi.model.entity.pokedex.Pokedex;
 

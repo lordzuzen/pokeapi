@@ -1,4 +1,4 @@
-package com.alea.springboot.app.pokeapi.model.pokemon.dao;
+package com.alea.springboot.app.pokeapi.dao.pokemon;
 
 import org.springframework.stereotype.Service;
 

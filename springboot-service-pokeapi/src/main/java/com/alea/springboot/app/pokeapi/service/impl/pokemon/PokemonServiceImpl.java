@@ -1,4 +1,4 @@
-package com.alea.springboot.app.pokeapi.model.pokemon.service.impl;
+package com.alea.springboot.app.pokeapi.service.impl.pokemon;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,13 +6,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.alea.springboot.app.pokeapi.dao.pokemon.PokemonDAO;
 import com.alea.springboot.app.pokeapi.h2.database.service.PokemonPersistanceService;
 import com.alea.springboot.app.pokeapi.model.entity.pokedex.Pokedex;
 import com.alea.springboot.app.pokeapi.model.entity.pokedex.PokemonEntry;
 import com.alea.springboot.app.pokeapi.model.entity.pokemon.Pokemon;
-import com.alea.springboot.app.pokeapi.model.pokedex.service.IPokedexService;
-import com.alea.springboot.app.pokeapi.model.pokemon.dao.PokemonDAO;
-import com.alea.springboot.app.pokeapi.model.pokemon.service.IPokemonService;
+import com.alea.springboot.app.pokeapi.service.pokedex.IPokedexService;
+import com.alea.springboot.app.pokeapi.service.pokemon.IPokemonService;
 
 @Service
 public class PokemonServiceImpl implements IPokemonService {

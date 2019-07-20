@@ -12,8 +12,8 @@ import com.alea.springboot.app.pokeapi.h2.database.service.PokemonPersistanceSer
 import com.alea.springboot.app.pokeapi.model.entity.pokedex.Pokedex;
 import com.alea.springboot.app.pokeapi.model.entity.pokedex.PokemonEntry;
 import com.alea.springboot.app.pokeapi.model.entity.pokemon.Pokemon;
-import com.alea.springboot.app.pokeapi.model.pokedex.service.IPokedexService;
-import com.alea.springboot.app.pokeapi.model.pokemon.service.IPokemonService;
+import com.alea.springboot.app.pokeapi.service.pokedex.IPokedexService;
+import com.alea.springboot.app.pokeapi.service.pokemon.IPokemonService;
 
 @RestController
 public class PokemonController {
