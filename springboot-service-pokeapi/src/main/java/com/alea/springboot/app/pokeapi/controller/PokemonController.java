@@ -8,15 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alea.springboot.app.pokeapi.h2.database.dao.PokemonPersistanceDAO;
+import com.alea.springboot.app.pokeapi.h2.database.service.PokemonPersistanceService;
 import com.alea.springboot.app.pokeapi.model.entity.pokedex.Pokedex;
 import com.alea.springboot.app.pokeapi.model.entity.pokedex.PokemonEntry;
 import com.alea.springboot.app.pokeapi.model.entity.pokemon.Pokemon;
-import com.alea.springboot.app.pokeapi.model.entity.pokemon.VersionGameIndex;
-import com.alea.springboot.app.pokeapi.model.entity.resource.NamedAPIResource;
 import com.alea.springboot.app.pokeapi.model.pokedex.service.IPokedexService;
-import com.alea.springboot.app.pokeapi.model.entity.resource.APIResourceList;
 import com.alea.springboot.app.pokeapi.model.pokemon.service.IPokemonService;
-import com.alea.springboot.app.pokeapi.model.resource.service.IResourceService;
 
 @RestController
 public class PokemonController {
@@ -25,19 +23,14 @@ public class PokemonController {
 	IPokemonService pokemonService;
 
 	@Autowired
-	IResourceService resourceService;
-
-	@Autowired
 	IPokedexService pokedexService;
-
-	@GetMapping("/all/{limit}/{offset}")
-	public APIResourceList all(@PathVariable Integer limit, @PathVariable Integer offset) {
-		return resourceService.find(limit, offset);
-	}
+	
+	@Autowired
+	PokemonPersistanceService pokemonPersistanceService;
 
 	@GetMapping("/id/{url}")
 	public Pokemon findById(@PathVariable String url) {
-		return pokemonService.findOne("https://pokeapi.co/api/v2/pokemon/1/");
+		return pokemonService.findOne("bulbasaur");
 	}
 
 	@GetMapping("/findRedPokemons")
@@ -53,8 +46,14 @@ public class PokemonController {
 			for (PokemonEntry entry : pokedex.getPokemonEntries()) {
 				Pokemon pokemon = pokemonService.findOne(entry.getPokemonSpecies().getName());
 				pokemonList.add(pokemon);
+				pokemonPersistanceService.create(pokemon);
 			}
 		}
 		return pokemonList;
+	}
+	
+	@GetMapping("/highestPokemons")
+	public List<Pokemon> findHighestPokemons() {
+		return pokemonPersistanceService.getHighestPokemons();
 	}
 }
