@@ -64,6 +64,9 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
+		<finalName> 
+			docker-spring-boot-pokeapi
+		</finalName>
 	</build>
 
 </project>
