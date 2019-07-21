@@ -1,5 +1,7 @@
 # pokeapi
 
+Author: David Alvarez Palau
+
 Endpoints:
 
 http://localhost:8003/heaviestPokemons
