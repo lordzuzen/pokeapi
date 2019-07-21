@@ -29,10 +29,4 @@ public class PokemonController {
 	public List<Pokemon> findMoreBaseExperiencePokemons() {
 		return pokemonService.getMoreBaseExperiencePokemons();
 	}
-	
-	// Test Method
-	@GetMapping("/test")
-    public String test() {
-        return "Running!";
-    }
 }

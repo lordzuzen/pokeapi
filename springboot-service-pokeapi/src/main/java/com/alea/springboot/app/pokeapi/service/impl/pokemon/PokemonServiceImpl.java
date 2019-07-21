@@ -5,17 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.alea.springboot.app.pokeapi.dao.pokemon.PokemonDAO;
-import com.alea.springboot.app.pokeapi.h2.database.service.PokemonPersistanceService;
 import com.alea.springboot.app.pokeapi.model.entity.pokemon.Pokemon;
+import com.alea.springboot.app.pokeapi.repository.pokemon.PokemonRepository;
+import com.alea.springboot.app.pokeapi.service.persistance.PokemonPersistanceService;
 import com.alea.springboot.app.pokeapi.service.pokedex.IPokedexService;
 import com.alea.springboot.app.pokeapi.service.pokemon.IPokemonService;
+import com.alea.springboot.app.pokeapi.utils.Constants;
 
 @Service
 public class PokemonServiceImpl implements IPokemonService {
 
 	@Autowired
-	private PokemonDAO pokemonDAO;
+	private PokemonRepository pokemonDAO;
 
 	@Autowired
 	private PokemonPersistanceService pokemonPersistanceService;
@@ -24,8 +25,8 @@ public class PokemonServiceImpl implements IPokemonService {
 	private IPokedexService pokedexService;
 
 	@Override
-	public void save(Pokemon pokemon) {
-		pokemonPersistanceService.create(pokemon);
+	public Pokemon save(Pokemon pokemon) {
+		return pokemonPersistanceService.create(pokemon);
 	}
 
 	@Override
@@ -36,7 +37,7 @@ public class PokemonServiceImpl implements IPokemonService {
 	@Override
 	public List<Pokemon> getHighestPokemons() {
 		if (!cachedPokemons()) {
-			pokedexService.findPokedex("kanto");
+			pokedexService.findPokedex(Constants.KANTO_ID);
 		}
 		return pokemonPersistanceService.getHighestPokemons();
 	}
@@ -44,7 +45,7 @@ public class PokemonServiceImpl implements IPokemonService {
 	@Override
 	public List<Pokemon> getHeaviestPokemons() {
 		if (!cachedPokemons()) {
-			pokedexService.findPokedex("kanto");
+			pokedexService.findPokedex(Constants.KANTO_ID);
 		}
 		return pokemonPersistanceService.getHeaviestPokemons();
 	}
@@ -52,7 +53,7 @@ public class PokemonServiceImpl implements IPokemonService {
 	@Override
 	public List<Pokemon> getMoreBaseExperiencePokemons() {
 		if (!cachedPokemons()) {
-			pokedexService.findPokedex("kanto");
+			pokedexService.findPokedex(Constants.KANTO_ID);
 		}
 		return pokemonPersistanceService.getMoreBaseExperiencePokemons();
 	}

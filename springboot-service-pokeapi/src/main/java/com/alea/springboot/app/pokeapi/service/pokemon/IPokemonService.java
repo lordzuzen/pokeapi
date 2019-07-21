@@ -6,7 +6,7 @@ import com.alea.springboot.app.pokeapi.model.entity.pokemon.Pokemon;
 
 public interface IPokemonService {
 
-	public void save(Pokemon pokemon);
+	public Pokemon save(Pokemon pokemon);
 	
 	public Pokemon findOne(String name);
 	

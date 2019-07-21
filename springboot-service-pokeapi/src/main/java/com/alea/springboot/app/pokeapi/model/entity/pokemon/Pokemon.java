@@ -10,10 +10,14 @@ import javax.persistence.Transient;
 
 import com.google.gson.annotations.SerializedName;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 public class Pokemon implements Serializable {
 
 	// The identifier for this resource.

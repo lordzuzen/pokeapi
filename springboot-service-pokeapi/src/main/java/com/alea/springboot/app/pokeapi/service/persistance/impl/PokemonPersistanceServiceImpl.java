@@ -1,23 +1,24 @@
-package com.alea.springboot.app.pokeapi.h2.database.service.impl;
+package com.alea.springboot.app.pokeapi.service.persistance.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.alea.springboot.app.pokeapi.h2.database.dao.PokemonPersistanceDAO;
-import com.alea.springboot.app.pokeapi.h2.database.service.PokemonPersistanceService;
 import com.alea.springboot.app.pokeapi.model.entity.pokemon.Pokemon;
+import com.alea.springboot.app.pokeapi.repository.persistance.PokemonPersistanceRepository;
+import com.alea.springboot.app.pokeapi.service.persistance.PokemonPersistanceService;
 
 @Service
 public class PokemonPersistanceServiceImpl implements PokemonPersistanceService {
 
 	@Autowired
-	PokemonPersistanceDAO pokemonPersistanceDAO;
+	PokemonPersistanceRepository pokemonPersistanceDAO;
 	
 	@Override
-	public void create(Pokemon pokemon) {
+	public Pokemon create(Pokemon pokemon) {
 		pokemonPersistanceDAO.save(pokemon);
+		return pokemon;
 	}
 
 	@Override

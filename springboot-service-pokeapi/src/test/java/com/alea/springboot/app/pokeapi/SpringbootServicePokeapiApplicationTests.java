@@ -16,12 +16,6 @@ public class SpringbootServicePokeapiApplicationTests {
 
 	@Autowired
 	private TestRestTemplate restTemplate;
-
-	@Test
-	public void sanityCheck() {
-		String body = this.restTemplate.getForObject("/test", String.class);
-		assertThat(body).isEqualTo("Running!");
-	}
 	
 	@Test
 	public void highestPokemons() {

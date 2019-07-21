@@ -3,10 +3,10 @@ package com.alea.springboot.app.pokeapi.service.impl.pokedex;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.alea.springboot.app.pokeapi.dao.pokedex.PokedexDAO;
-import com.alea.springboot.app.pokeapi.h2.database.service.PokemonPersistanceService;
 import com.alea.springboot.app.pokeapi.model.entity.pokedex.Pokedex;
 import com.alea.springboot.app.pokeapi.model.entity.pokedex.PokemonEntry;
+import com.alea.springboot.app.pokeapi.repository.pokedex.PokedexRepository;
+import com.alea.springboot.app.pokeapi.service.persistance.PokemonPersistanceService;
 import com.alea.springboot.app.pokeapi.service.pokedex.IPokedexService;
 import com.alea.springboot.app.pokeapi.service.pokemon.IPokemonService;
 
@@ -14,7 +14,7 @@ import com.alea.springboot.app.pokeapi.service.pokemon.IPokemonService;
 public class PokedexServiceImpl implements IPokedexService {
 
 	@Autowired
-	private PokedexDAO pokedexDAO;
+	private PokedexRepository pokedexDAO;
 
 	@Autowired
 	private PokemonPersistanceService pokemonPersistanceService;
