@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.alea.springboot.app.pokeapi.model.entity.pokemon.Pokemon;
+import com.alea.springboot.app.pokeapi.entity.pokemon.Pokemon;
 
 public interface PokemonPersistanceRepository extends JpaRepository<Pokemon, Integer> {
 

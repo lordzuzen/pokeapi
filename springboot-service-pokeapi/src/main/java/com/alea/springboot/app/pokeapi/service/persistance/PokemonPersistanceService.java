@@ -2,7 +2,7 @@ package com.alea.springboot.app.pokeapi.service.persistance;
 
 import java.util.List;
 
-import com.alea.springboot.app.pokeapi.model.entity.pokemon.Pokemon;
+import com.alea.springboot.app.pokeapi.entity.pokemon.Pokemon;
 
 public interface PokemonPersistanceService {
 

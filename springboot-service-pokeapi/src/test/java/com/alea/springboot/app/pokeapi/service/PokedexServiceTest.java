@@ -12,10 +12,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import com.alea.springboot.app.pokeapi.model.entity.pokedex.Pokedex;
-import com.alea.springboot.app.pokeapi.model.entity.pokedex.PokemonEntry;
-import com.alea.springboot.app.pokeapi.model.entity.pokemon.Pokemon;
-import com.alea.springboot.app.pokeapi.model.entity.resource.NamedAPIResource;
+import com.alea.springboot.app.pokeapi.entity.pokedex.Pokedex;
+import com.alea.springboot.app.pokeapi.entity.pokedex.PokemonEntry;
+import com.alea.springboot.app.pokeapi.entity.pokemon.Pokemon;
+import com.alea.springboot.app.pokeapi.entity.resource.NamedAPIResource;
 import com.alea.springboot.app.pokeapi.repository.pokedex.PokedexRepository;
 import com.alea.springboot.app.pokeapi.service.impl.pokedex.PokedexServiceImpl;
 import com.alea.springboot.app.pokeapi.service.impl.pokemon.PokemonServiceImpl;

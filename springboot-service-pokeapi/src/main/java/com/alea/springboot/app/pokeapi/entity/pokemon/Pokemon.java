@@ -1,4 +1,4 @@
-package com.alea.springboot.app.pokeapi.model.entity.pokemon;
+package com.alea.springboot.app.pokeapi.entity.pokemon;
 
 import java.io.Serializable;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.alea.springboot.app.pokeapi.model.entity.pokedex;
+package com.alea.springboot.app.pokeapi.entity.pokedex;
 
 import java.util.List;
 

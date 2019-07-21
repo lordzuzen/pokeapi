@@ -1,4 +1,4 @@
-package com.alea.springboot.app.pokeapi.model.entity.resource;
+package com.alea.springboot.app.pokeapi.entity.resource;
 
 import java.io.Serializable;
 

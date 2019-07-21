@@ -12,7 +12,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import com.alea.springboot.app.pokeapi.model.entity.pokemon.Pokemon;
+import com.alea.springboot.app.pokeapi.entity.pokemon.Pokemon;
 import com.alea.springboot.app.pokeapi.repository.persistance.PokemonPersistanceRepository;
 import com.alea.springboot.app.pokeapi.service.persistance.impl.PokemonPersistanceServiceImpl;
 

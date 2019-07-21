@@ -1,8 +1,8 @@
-package com.alea.springboot.app.pokeapi.model.entity.pokemon;
+package com.alea.springboot.app.pokeapi.entity.pokemon;
 
 import java.io.Serializable;
 
-import com.alea.springboot.app.pokeapi.model.entity.resource.NamedAPIResource;
+import com.alea.springboot.app.pokeapi.entity.resource.NamedAPIResource;
 import com.google.gson.annotations.SerializedName;
 
 import lombok.Data;

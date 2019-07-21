@@ -2,7 +2,7 @@ package com.alea.springboot.app.pokeapi.repository.pokemon;
 
 import org.springframework.stereotype.Service;
 
-import com.alea.springboot.app.pokeapi.model.entity.pokemon.Pokemon;
+import com.alea.springboot.app.pokeapi.entity.pokemon.Pokemon;
 import com.alea.springboot.app.pokeapi.utils.APIConnect;
 import com.alea.springboot.app.pokeapi.utils.URLIndex;
 
